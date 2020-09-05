@@ -30,7 +30,7 @@ export class TabsComponent implements OnInit, AfterViewInit {
 
   @ContentChildren(TabComponent) tabComponents: QueryList<TabComponent>;
   @ContentChild(ContentContainerDirective, {static: true}) contentContainer: ContentContainerDirective;
-  @ContentChild('templateRef', { read: TemplateRef }) templateRef: TemplateRef<any>;
+  @ContentChild('templateRef', { read: TemplateRef, static: false }) templateRef: TemplateRef<any>;
 
   constructor(private cdr: ChangeDetectorRef) {}
 

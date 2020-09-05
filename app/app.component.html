@@ -7,14 +7,17 @@
 
 <br>
 
-<tabs>
-  <tab *ngFor="let tab of tabs">
-    <tab-title>
-      Tab <b>{{ tab }}</b> title
-    </tab-title>
-    <tab-content>
-      Tab <b>{{ tab }}</b> content
-      <test [tab]="tab"></test>
-    </tab-content>
-  </tab>
+<tabs [tabs]="tabs">
+    <tab *ngFor="let tab of tabs">
+        <tab-title>
+            Tab <b>{{ tab }}</b> title
+        </tab-title>
+        <ng-template #templateRef let-tab='tab'>
+            <tab-content>
+                Tab <b>{{ tab }}</b> content
+                <test [tab]="tab"></test>
+            </tab-content>
+        </ng-template>
+    </tab>
+    <ng-container contentContainer></ng-container>
 </tabs>

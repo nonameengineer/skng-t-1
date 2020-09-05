@@ -12,6 +12,5 @@ import { ContentContainerDirective } from './tabs/directives/content-container/c
   imports:      [ BrowserModule, FormsModule, TabsModule ],
   declarations: [ AppComponent, HelloComponent, TestComponent, ContentContainerDirective, ],
   bootstrap:    [ AppComponent ],
-  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }

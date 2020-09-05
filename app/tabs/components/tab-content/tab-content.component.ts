@@ -6,5 +6,4 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./tab-content.component.css']
 })
 export class TabContentComponent {
-  @Input() template;
 }

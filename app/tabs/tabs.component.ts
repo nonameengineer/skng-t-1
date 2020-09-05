@@ -32,7 +32,7 @@ export class TabsComponent implements OnInit, AfterViewInit {
   @ContentChild(ContentContainerDirective, {static: true}) contentContainer: ContentContainerDirective;
   @ContentChild('templateRef', { read: TemplateRef, static: false }) templateRef: TemplateRef<any>;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor() {}
 
   ngOnInit(): void {
 
@@ -76,11 +76,9 @@ export class TabsComponent implements OnInit, AfterViewInit {
   }
 
   private loadComponent(index: number): void {
-    setTimeout(() => {
-      const viewContainerRef = this.contentContainer.viewContainerRef;
-      viewContainerRef.clear();
-      viewContainerRef.createEmbeddedView(this.templateRef, {tab: this.tabs[index]});
-    });
+    const viewContainerRef = this.contentContainer.viewContainerRef;
+    viewContainerRef.clear();
+    viewContainerRef.createEmbeddedView(this.templateRef, {tab: this.tabs[index]});
   }
 
   private setFirstTabActive(): void {
